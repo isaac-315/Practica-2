@@ -1,0 +1,14 @@
+:root{
+    font-family: Inter, sys-ui, sans-serif;
+    color: #181;
+    background: #bbb;
+}
+
+body{
+    margin: 0;
+}
+
+.app-shell{
+    min-height: 100vh;
+    padding: 3rem;
+}

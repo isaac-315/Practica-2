@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Custom Tags Theme",
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "skipStyle": true
+        }
+    }
+}
