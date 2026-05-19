@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   selector: 'app-student-detail',
   imports: [RouterLink],
   templateUrl: './student-detail.html',
+  styleUrls: ['./student-detail.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StudentDetail {

@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from "@angular/router";
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink, UpperCasePipe, RouterLinkActive],
   templateUrl: './app-header.html',
   styleUrls: ['./app-header.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

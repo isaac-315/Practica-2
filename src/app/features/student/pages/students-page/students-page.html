@@ -1,13 +1,28 @@
-<h1>Students Page</h1>
-<p>Seleccionar el estudiante para ver su detalle.</p>
+<section class="students-page">
+  <h1 class="students-page__title">Estudiantes</h1>
+  <p class="students-page__subtitle">Selecciona un estudiante para ver su detalle.</p>
 
-<ul>
-    @for (estudiante of students(); track estudiante.id) {
-        <li>
-            <a [routerLink]="['/students', estudiante.id]">{{ estudiante.name }}</a>
-        </li>
-    }@empty {
-        <li>Listado Vacío</li>
+  <ul class="students-list">
+
+    <!--
+      @for itera el signal students().
+      track student.id: usa el ID como clave única para optimizar el DOM.
+    -->
+    @for (student of students(); track student.id) {
+      <li class="students-list__item">
+        <!--
+          [routerLink]="['/students', student.id]" → property binding con array.
+          Angular concatena los segmentos: produce /students/1, /students/2, etc.
+        -->
+        <a [routerLink]="['/students', student.id]">
+          {{ student.name }}
+        </a>
+      </li>
+
+    } @empty {
+      <!-- Se renderiza automáticamente cuando students() tiene longitud 0 -->
+      <li class="students-empty">No hay estudiantes disponibles.</li>
     }
 
-</ul>
+  </ul>
+</section>
