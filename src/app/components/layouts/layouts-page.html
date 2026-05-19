@@ -1,0 +1,357 @@
+<!--
+  space-y-10: ritmo vertical generoso (2.5rem) entre secciones.
+-->
+<section class="space-y-10">
+
+    <!-- Encabezado de la página -->
+    <header class="space-y-3">
+        <!--
+      text-sm        → font-size: 0.875rem
+      font-semibold  → font-weight: 600
+      uppercase      → text-transform: uppercase
+      tracking-[0.3em] → letter-spacing arbitrario (0.3em)
+      text-sky-700   → azul intenso para etiqueta de categoría
+    -->
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Layouts</p>
+
+        <!--
+      md:text-4xl: escala tipográfica en pantallas medianas (≥768px).
+    -->
+        <h1 class="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            Distribuciones de layout con Tailwind
+        </h1>
+
+        <!--
+      max-w-2xl: limita el ancho del párrafo para mejor legibilidad.
+      leading-7: line-height: 1.75rem.
+    -->
+        <p class="max-w-2xl leading-7 text-slate-600">
+            Cada sección muestra una distribución diferente: grid de columnas, grid con sidebar,
+            y distribuciones flex. Los cards ilustran cómo cambia la composición y aplican
+            efectos distintos en cada caso.
+        </p>
+    </header>
+
+    <!-- Las secciones de grid y flex se agregan aquí -->
+    <!--
+  rounded-3xl border border-slate-200 bg-white p-6 shadow-sm:
+  contenedor de sección con fondo blanco, borde sutil y sombra ligera.
+-->
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid de 4 columnas</h2>
+        <p class="mb-5 text-sm text-slate-500">1 col en móvil → 2 en sm → 4 en lg. Cards con gradiente y sombra.</p>
+
+        <!--
+    grid      → activa CSS Grid
+    gap-4     → espacio de 1rem entre celdas
+    sm:grid-cols-2  → 2 columnas en pantallas ≥ 640px
+    lg:grid-cols-4  → 4 columnas en pantallas ≥ 1024px
+  -->
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+            <!--
+      bg-linear-to-br  → gradiente diagonal (arriba-izquierda → abajo-derecha)
+      from-sky-400 to-blue-600 → de celeste a azul
+      shadow-lg  → sombra grande con mayor difuminado
+      text-white → texto blanco sobre el gradiente oscuro
+      p-5        → padding interno de 1.25rem
+      rounded-2xl → border-radius: 1rem
+    -->
+            <article class="rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 shadow-lg text-white">
+                <!--
+        opacity-80: opacidad del 80% sobre el texto de etiqueta.
+      -->
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 01</p>
+                <h3 class="mt-2 text-lg font-semibold">Usuarios activos</h3>
+                <p class="mt-2 text-sm leading-6 opacity-90">Indicador rápido de actividad.</p>
+            </article>
+
+            <!-- from-violet-500 to-purple-700: gradiente de violeta a morado -->
+            <article class="rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 shadow-lg text-white">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 02</p>
+                <h3 class="mt-2 text-lg font-semibold">Tareas pendientes</h3>
+                <p class="mt-2 text-sm leading-6 opacity-90">Resumen visual de trabajo.</p>
+            </article>
+
+            <!-- from-emerald-400 to-teal-600: gradiente verde esmeralda a teal -->
+            <article class="rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-5 shadow-lg text-white">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 03</p>
+                <h3 class="mt-2 text-lg font-semibold">Ingresos</h3>
+                <p class="mt-2 text-sm leading-6 opacity-90">Métrica financiera con lectura inmediata.</p>
+            </article>
+
+            <!-- from-rose-400 to-pink-600: gradiente rosado -->
+            <article class="rounded-2xl bg-linear-to-br from-rose-400 to-pink-600 p-5 shadow-lg text-white">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 04</p>
+                <h3 class="mt-2 text-lg font-semibold">Satisfacción</h3>
+                <p class="mt-2 text-sm leading-6 opacity-90">Seguimiento de experiencia.</p>
+            </article>
+        </div>
+    </article>
+
+    <!-- LAYOUT TIPO REVISTA -->
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+
+        <h2 class="mb-1 text-xl font-semibold text-slate-900">
+            Layout tipo revista
+        </h2>
+
+        <p class="mb-5 text-sm text-slate-500">
+            Columna principal amplia + columna lateral compacta.
+            Ideal para noticias, blogs o contenido destacado.
+        </p>
+
+        <!--
+    lg:grid-cols-[2fr_1fr]
+
+    Este layout divide el espacio en:
+    - una columna principal que ocupa 2 fracciones
+    - una sidebar que ocupa 1 fracción
+
+    El contenido principal tiene más protagonismo visual,
+    mientras la barra lateral funciona como apoyo.
+  -->
+        <div class="grid gap-4 lg:grid-cols-[2fr_1fr]">
+
+            <!-- Contenido principal -->
+            <section class="rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-6 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
+                    Destacado
+                </p>
+
+                <h3 class="mt-2 text-xl font-semibold">
+                    Artículo principal
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 opacity-90">
+                    Esta sección ocupa mayor espacio para resaltar
+                    contenido importante dentro del layout.
+                </p>
+
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="rounded-2xl bg-slate-100 p-6 shadow-md ring-1 ring-slate-200">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">
+                    Sidebar
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold text-slate-900">
+                    Noticias rápidas
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-slate-600">
+                    Espacio secundario para enlaces,
+                    novedades o información complementaria.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </article>
+
+    <!-- LAYOUT TIPO DASHBOARD AVANZADO -->
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+
+        <h2 class="mb-1 text-xl font-semibold text-slate-900">
+            Dashboard de 3 áreas
+        </h2>
+
+        <p class="mb-5 text-sm text-slate-500">
+            Sidebar izquierda + contenido principal + panel derecho.
+            Combina columnas fijas y flexibles usando grid-template-columns personalizado.
+        </p>
+
+        <!--
+    xl:grid-cols-[220px_1fr_280px]
+
+    Este layout crea:
+    - una columna izquierda fija de 220px
+    - una columna central flexible (1fr)
+    - una columna derecha fija de 280px
+
+    Es un patrón común en dashboards administrativos,
+    paneles analíticos y aplicaciones empresariales.
+  -->
+        <div class="grid gap-4 xl:grid-cols-[220px_1fr_280px]">
+
+            <!-- Sidebar -->
+            <aside class="rounded-2xl bg-slate-900 p-5 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-70">
+                    Navegación
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold">
+                    Sidebar
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 opacity-90">
+                    Contiene accesos rápidos y herramientas principales.
+                </p>
+
+            </aside>
+
+            <!-- Contenido principal -->
+            <section class="rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
+                    Principal
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold">
+                    Panel central
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 opacity-90">
+                    Área flexible destinada a estadísticas,
+                    métricas y contenido prioritario.
+                </p>
+
+            </section>
+
+            <!-- Panel derecho -->
+            <aside class="rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
+                    Extra
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold">
+                    Panel secundario
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 opacity-90">
+                    Espacio para notificaciones,
+                    actividad reciente o acciones rápidas.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </article>
+
+    <!-- LAYOUT VERTICAL: HEADER + CONTENIDO + FOOTER -->
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+
+        <h2 class="mb-1 text-xl font-semibold text-slate-900">
+            Layout vertical clásico
+        </h2>
+
+        <p class="mb-5 text-sm text-slate-500">
+            Define filas personalizadas usando grid-template-rows.
+        </p>
+
+        <!--
+    grid-rows-[80px_1fr_100px]
+
+    Este layout crea:
+    - header fijo de 80px
+    - contenido flexible
+    - footer fijo de 100px
+
+    Es común en dashboards y aplicaciones web.
+  -->
+        <div class="grid h-[500px] gap-4 grid-rows-[80px_1fr_100px]">
+
+            <header class="rounded-2xl bg-sky-500 p-5 text-white shadow-lg">
+                Header
+            </header>
+
+            <main class="rounded-2xl bg-emerald-500 p-5 text-white shadow-lg">
+                Contenido principal flexible
+            </main>
+
+            <footer class="rounded-2xl bg-slate-900 p-5 text-white shadow-lg">
+                Footer
+            </footer>
+
+        </div>
+
+    </article>
+
+    <!-- LAYOUT RESPONSIVE CON FLEX-DIRECTION -->
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+
+        <h2 class="mb-1 text-xl font-semibold text-slate-900">
+            Flex responsive
+        </h2>
+
+        <p class="mb-5 text-sm text-slate-500">
+            Los elementos se apilan verticalmente en móvil
+            y cambian a fila horizontal en pantallas medianas.
+        </p>
+
+        <!--
+    flex-col md:flex-row
+
+    Este layout usa flex-direction responsive:
+    - flex-col → elementos en columna en móviles
+    - md:flex-row → elementos en fila desde pantallas medianas
+
+    Es un patrón muy común para interfaces adaptables.
+  -->
+        <div class="flex flex-col gap-4 lg:flex-row">
+
+            <article class="flex-1 rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
+                    Bloque 01
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold">
+                    Información
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 opacity-90">
+                    Se acomoda automáticamente según el tamaño de pantalla.
+                </p>
+
+            </article>
+
+            <article class="flex-1 rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
+                    Bloque 02
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold">
+                    Estadísticas
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 opacity-90">
+                    El contenido cambia de columna a fila responsivamente.
+                </p>
+
+            </article>
+
+            <article class="flex-1 rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-5 text-white shadow-lg">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
+                    Bloque 03
+                </p>
+
+                <h3 class="mt-2 text-lg font-semibold">
+                    Reportes
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 opacity-90">
+                    Mantiene una distribución flexible y adaptable.
+                </p>
+
+            </article>
+
+        </div>
+
+    </article>
+
+
+
+
+
+
+</section>

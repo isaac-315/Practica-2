@@ -1,3 +1,4 @@
+/*
 .students-page {
     display: flex;
     flex-direction: column;
@@ -14,7 +15,7 @@
     color: #5f6b7a;
 }
 
-/* Elimina bullets y padding por defecto del <ul> */
+/* Elimina bullets y padding por defecto del <ul> 
 .students-list {
     list-style: none;
     padding: 0;
@@ -24,7 +25,7 @@
     gap: 0.5rem;
 }
 
-/* display: block hace que toda el área del ítem sea clickeable */
+/* display: block hace que toda el área del ítem sea clickeable 
 .students-list__item a {
     display: block;
     padding: 0.75rem 1rem;
@@ -43,8 +44,8 @@
     color: #0b3a66;
 }
 
-/* Diferencia visualmente el estado vacío del contenido real */
+/* Diferencia visualmente el estado vacío del contenido real 
 .students-empty {
     color: #7a8696;
     font-style: italic;
-}
+}*/
