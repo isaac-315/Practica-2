@@ -4,11 +4,13 @@ import { StudentsPage } from './features/student/pages/students-page/students-pa
 import { StudentDetail } from './features/student/pages/students-detail/student-detail';
 import { RouterOutlet } from '@angular/router';
 import { LayoutsPage } from './components/layouts/layouts-page';
+import { SignupComponent } from './features/signup/pages/signup-page';
 
 export const routes: Routes = [
   { path: '', component: HomePage },
   { path: 'students', component: StudentsPage },
   { path: 'students/:id', component: StudentDetail },
+  { path: 'signup', component: SignupComponent },
   { path: 'layouts', component: LayoutsPage },
   { path: '**', redirectTo: '' },
 ];
