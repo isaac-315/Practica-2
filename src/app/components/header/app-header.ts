@@ -1,28 +1,46 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UpperCasePipe } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, UpperCasePipe, RouterLinkActive],
+  imports: [RouterLink, UpperCasePipe, RouterLinkActive, ReactiveFormsModule],
   templateUrl: './app-header.html',
   styleUrls: ['./app-header.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppHeader {
-  readonly brand = signal("ppw-angular");
-  readonly showInfo = signal(false);
-  readonly toggleLabel = computed(() => this.showInfo() ? "Ocultar info" : "Mostrar info");
-    
-  changeBrand(): void {
-    //actualizar el valor de la senal brand
-    this.brand.update((valor)=> valor + '!');
+  readonly brand = signal('ppw-angular');
+  private fb = inject(FormBuilder);
+
+  myForm = this.fb.group({
+    nombre: ['', [Validators.required, Validators.minLength(3)]],
+
+    edad: [0, [Validators.required, Validators.min(18)]],
+
+    correo: ['', [Validators.required, Validators.email]],
+  });
+
+  get nombre() {
+    return this.myForm.get('nombre');
   }
-  resetBrand(): void {
-    //actualizar el valor de la senal brand
-    this.brand.set("ppw-angular");
+
+  get edad() {
+    return this.myForm.get('edad');
   }
-  toggleInfo(){
-    this.showInfo.update((valor) => !valor);
+
+  get correo() {
+    return this.myForm.get('correo');
+  }
+
+  onSubmit(): void {
+    if (this.myForm.invalid) {
+      this.myForm.markAllAsTouched();
+
+      return;
+    }
+
+    console.log(this.myForm.value);
   }
 }

@@ -1,17 +1,54 @@
-<header class="app-header">
+<header class="app-header flex items-center justify-between">
 
-  <!-- Título de la app: signal brand transformado a mayúsculas con el pipe -->
-  <span class="app-header__brand">{{ brand() | uppercase }}</span>
+  <!-- Marca -->
+  <span class="app-header__brand">
+    {{ brand() | uppercase }}
+  </span>
 
-  <!--
-    routerLink="/" y routerLink="/students" navegan internamente sin recargar.
-    Aún no hay indicador visual de cuál está activo.
-  -->
-  <nav class="app-header__nav">
-    <a class="nav-link" routerLink="/" routerLinkActive="nav-link--active" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
-    <a class="nav-link" routerLink="/students" routerLinkActive="nav-link--active">Estudiantes</a>
-    <a class="nav-link" routerLink="/layouts" routerLinkActive="nav-link--active">Layouts</a>
-    <a class="nav-link" routerLink="/signup" routerLinkActive="nav-link--active">Sign Up</a>
+  <!-- Navegación -->
+  <nav class="app-header__nav flex items-center gap-4 ml-auto">
+
+    <a
+      class="nav-link"
+      routerLink="/"
+      routerLinkActive="nav-link--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Inicio
+    </a>
+
+    <a
+      class="nav-link"
+      routerLink="/students"
+      routerLinkActive="nav-link--active"
+    >
+      Estudiantes
+    </a>
+
+    <a
+      class="nav-link"
+      routerLink="/layouts"
+      routerLinkActive="nav-link--active"
+    >
+      Layouts
+    </a>
+
+    <a
+      class="nav-link"
+      routerLink="/signup"
+      routerLinkActive="nav-link--active"
+    >
+      Sign Up
+    </a>
+
+    <a
+      class="nav-link"
+      routerLink="/profile"
+      routerLinkActive="nav-link--active"
+    >
+      Profile
+    </a>
+
   </nav>
 
 </header>

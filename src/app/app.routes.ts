@@ -5,6 +5,8 @@ import { StudentDetail } from './features/student/pages/students-detail/student-
 import { RouterOutlet } from '@angular/router';
 import { LayoutsPage } from './components/layouts/layouts-page';
 import { SignupComponent } from './features/signup/pages/signup-page';
+import { ProfilePage } from './features/profile/pages/profile-page/profile-page';
+
 
 export const routes: Routes = [
   { path: '', component: HomePage },
@@ -12,5 +14,7 @@ export const routes: Routes = [
   { path: 'students/:id', component: StudentDetail },
   { path: 'signup', component: SignupComponent },
   { path: 'layouts', component: LayoutsPage },
+  { path: 'profile', component: ProfilePage },
+
   { path: '**', redirectTo: '' },
 ];
