@@ -57,6 +57,9 @@ importers:
       '@types/jasmine':
         specifier: ~5.1.0
         version: 5.1.15
+      daisyui:
+        specifier: ^5.5.20
+        version: 5.5.20
       jasmine-core:
         specifier: ~5.9.0
         version: 5.9.0
@@ -1839,6 +1842,9 @@ packages:
 
   custom-event@1.0.1:
     resolution: {integrity: sha512-GAj5FOq0Hd+RsCGVJxZuKaIDXDf3h6GQoNEjFgbLLI/trgtavwUbSnZ5pVfg27DVCaWjIohryS0JFwIJyT2cMg==}
+
+  daisyui@5.5.20:
+    resolution: {integrity: sha512-HemJcjl0Gk9rQ8BcgofN6p+EURrqftQG9wK1Hkxs98i49xe68+QxpNvry+PyxwkIUgrbMpNmZ5ZWjmtffAjfhQ==}
 
   data-view-buffer@1.0.2:
     resolution: {integrity: sha512-EmKO5V3OLXh1rtK2wgXRansaK1/mtVdTUEiEI0W8RkvgT05kfxaH29PliLnpLP73yYO6142Q72QNa8Wx/A5CqQ==}
@@ -5531,6 +5537,8 @@ snapshots:
   css-what@7.0.0: {}
 
   custom-event@1.0.1: {}
+
+  daisyui@5.5.20: {}
 
   data-view-buffer@1.0.2:
     dependencies:

@@ -1,19 +1,22 @@
-<footer class="footer-container">
-  
-  <!-- 1. Uppercase Pipe: Convierte todo a mayúsculas -->
-  <h3>{{ companyName | uppercase }}</h3>
+<footer class="footer sm:footer-horizontal mt-10 border border-base-200 bg-base-300 p-10 text-base-content shadow-sm">
+  <nav>
+    <h6 class="footer-title">PPW</h6>
+    <a class="link link-hover">Angular 21</a>
+    <a class="link link-hover">TailwindCSS</a>
+    <a class="link link-hover">DaisyUI</a>
+  </nav>
 
-  <!-- 2. Titlecase Pipe: Pone la primera letra de cada palabra en mayúscula -->
-  <p>Creado por: {{ authorRole | titlecase }}</p>
+  <nav>
+    <h6 class="footer-title">Navegación</h6>
+    <a class="link link-hover" routerLink="/">Inicio</a>
+    <a class="link link-hover" routerLink="/students">Estudiantes</a>
+    <a class="link link-hover" routerLink="/ui-components">Componentes</a>
+  </nav>
 
-  <!-- 3. Date Pipe: Formatea fechas (puedes usar 'short', 'fullDate', 'y', etc.) -->
-  <p>Fecha de actualización: {{ currentDate | date:'fullDate' }}</p>
-
-  <!-- 4. Currency Pipe: Formatea números como moneda (USD por defecto, o puedes especificar) -->
-  <p>Presupuesto estimado: {{ projectCost | currency:'USD' }}</p>
-
-  <!-- 5. JSON Pipe: Útil para debuggear, convierte objetos a formato JSON legible -->
-  <p>Detalles técnicos del proyecto:</p>
-  <pre>{{ techDetails | json }}</pre>
-
+  <nav>
+    <h6 class="footer-title">Curso</h6>
+    <a class="link link-hover">Layouts responsive</a>
+    <a class="link link-hover">Formularios</a>
+    <a class="link link-hover">Servicios HTTP</a>
+  </nav>
 </footer>

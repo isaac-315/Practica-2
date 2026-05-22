@@ -1,58 +1,162 @@
-<header class="app-header flex items-center justify-between">
+<header class="max-lg:collapse bg-base-100 shadow-sm w-full rounded-md">
+  <input id="navbar-toggle" class="peer hidden" type="checkbox" />
 
-  <!-- Marca -->
-  <span class="app-header__brand">
-    {{ brand() | uppercase }}
-  </span>
+  <label
+    for="navbar-toggle"
+    class="fixed inset-0 hidden max-lg:peer-checked:block"
+  ></label>
 
-  <!-- Navegación -->
-  <nav class="app-header__nav flex items-center gap-4 ml-auto">
+  <div class="collapse-title navbar px-4">
 
-    <a
-      class="nav-link"
-      routerLink="/"
-      routerLinkActive="nav-link--active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      Inicio
-    </a>
+    <!-- START -->
+    <div class="navbar-start">
+      <label for="navbar-toggle" class="btn btn-ghost lg:hidden">
+        ☰
+      </label>
 
-    <a
-      class="nav-link"
-      routerLink="/students"
-      routerLinkActive="nav-link--active"
-    >
-      Estudiantes
-    </a>
+      <a class="btn btn-ghost text-xl" routerLink="/">
+        {{ brand() | uppercase }}
+      </a>
+    </div>
 
-    <a
-      class="nav-link"
-      routerLink="/layouts"
-      routerLinkActive="nav-link--active"
-    >
-      Layouts
-    </a>
+    <!-- DESKTOP -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
 
-    <a
-      class="nav-link"
-      routerLink="/signup"
-      routerLinkActive="nav-link--active"
-    >
-      Sign Up
-    </a>
+        <li>
+          <a routerLink="/"
+             routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+             [routerLinkActiveOptions]="{ exact: true }">
+            Inicio
+          </a>
+        </li>
 
-    <a
-      class="nav-link"
-      routerLink="/profile"
-      routerLinkActive="nav-link--active"
-    >
-      Profile
-    </a>
+        <li>
+          <a routerLink="/students"
+             routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+            Estudiantes
+          </a>
+        </li>
 
-    <a class="nav-link" routerLink="/projects" routerLinkActive="nav-link--active">
-      Configurar Proyectos
-    </a>
+        <li>
+          <a routerLink="/layouts"
+             routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+            Layouts
+          </a>
+        </li>
 
-  </nav>
+        <!-- UI COMPONENTS -->
+        <li>
+          <a routerLink="/ui-components"
+             routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+            UI Components
+          </a>
+        </li>
 
+        <!-- FORMULARIOS -->
+        <li>
+          <details>
+            <summary>Formularios</summary>
+
+            <ul class="p-2 bg-base-100 rounded-box shadow">
+
+              <li>
+                <a routerLink="/signup"
+                   routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block">
+                  Signup
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/profile"
+                   routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block">
+                  Perfil
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/projects"
+                   routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block">
+                  Proyecto
+                </a>
+              </li>
+
+            </ul>
+          </details>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="navbar-end"></div>
+  </div>
+
+  <!-- MOBILE -->
+  <div class="collapse-content lg:hidden z-10">
+    <ul class="menu rounded-box bg-base-200">
+
+      <li>
+        <a routerLink="/"
+           routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+           [routerLinkActiveOptions]="{ exact: true }">
+          Inicio
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/students"
+           routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+          Estudiantes
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/layouts"
+           routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+          Layouts
+        </a>
+      </li>
+
+      <!-- UI COMPONENTS -->
+      <li>
+        <a routerLink="/ui-components"
+           routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+          UI Components
+        </a>
+      </li>
+
+      <!-- FORMULARIOS MOBILE -->
+      <li>
+        <details>
+          <summary>Formularios</summary>
+
+          <ul class="p-2">
+
+            <li>
+              <a routerLink="/signup"
+                 routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+                Signup
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/profile"
+                 routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+                Perfil
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/projects"
+                 routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+                Proyecto
+              </a>
+            </li>
+
+          </ul>
+        </details>
+      </li>
+
+    </ul>
+  </div>
 </header>
