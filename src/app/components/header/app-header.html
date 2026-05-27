@@ -1,4 +1,5 @@
 <header class="max-lg:collapse bg-base-100 shadow-sm w-full rounded-md">
+
   <input id="navbar-toggle" class="peer hidden" type="checkbox" />
 
   <label
@@ -10,6 +11,7 @@
 
     <!-- START -->
     <div class="navbar-start">
+
       <label for="navbar-toggle" class="btn btn-ghost lg:hidden">
         ☰
       </label>
@@ -17,146 +19,211 @@
       <a class="btn btn-ghost text-xl" routerLink="/">
         {{ brand() | uppercase }}
       </a>
+
     </div>
 
     <!-- DESKTOP -->
     <div class="navbar-center hidden lg:flex">
+
       <ul class="menu menu-horizontal px-1">
 
         <li>
-          <a routerLink="/"
-             routerLinkActive="bg-black text-white rounded-md px-2 py-1"
-             [routerLinkActiveOptions]="{ exact: true }">
+          <a
+            routerLink="/"
+            routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
             Inicio
           </a>
         </li>
 
         <li>
-          <a routerLink="/students"
-             routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+          <a
+            routerLink="/students"
+            routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+          >
             Estudiantes
           </a>
         </li>
 
         <li>
-          <a routerLink="/layouts"
-             routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+          <a
+            routerLink="/layouts"
+            routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+          >
             Layouts
           </a>
         </li>
 
-        <!-- UI COMPONENTS -->
         <li>
-          <a routerLink="/ui-components"
-             routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+          <a
+            routerLink="/ui-components"
+            routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+          >
             UI Components
+          </a>
+        </li>
+
+        <!-- SIMPSONS -->
+        <li>
+          <a
+            routerLink="/simpsons"
+            routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+          >
+            Simpsons
           </a>
         </li>
 
         <!-- FORMULARIOS -->
         <li>
+
           <details>
-            <summary>Formularios</summary>
+
+            <summary>
+              Formularios
+            </summary>
 
             <ul class="p-2 bg-base-100 rounded-box shadow">
 
               <li>
-                <a routerLink="/signup"
-                   routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block">
+                <a
+                  routerLink="/signup"
+                  routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block"
+                >
                   Signup
                 </a>
               </li>
 
               <li>
-                <a routerLink="/profile"
-                   routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block">
+                <a
+                  routerLink="/profile"
+                  routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block"
+                >
                   Perfil
                 </a>
               </li>
 
               <li>
-                <a routerLink="/projects"
-                   routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block">
+                <a
+                  routerLink="/projects"
+                  routerLinkActive="bg-black text-white rounded-md px-2 py-1 inline-block"
+                >
                   Proyecto
                 </a>
               </li>
 
             </ul>
+
           </details>
+
         </li>
 
       </ul>
+
     </div>
 
     <div class="navbar-end"></div>
+
   </div>
 
   <!-- MOBILE -->
   <div class="collapse-content lg:hidden z-10">
+
     <ul class="menu rounded-box bg-base-200">
 
       <li>
-        <a routerLink="/"
-           routerLinkActive="bg-black text-white rounded-md px-2 py-1"
-           [routerLinkActiveOptions]="{ exact: true }">
+        <a
+          routerLink="/"
+          routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           Inicio
         </a>
       </li>
 
       <li>
-        <a routerLink="/students"
-           routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+        <a
+          routerLink="/students"
+          routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+        >
           Estudiantes
         </a>
       </li>
 
       <li>
-        <a routerLink="/layouts"
-           routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+        <a
+          routerLink="/layouts"
+          routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+        >
           Layouts
         </a>
       </li>
 
-      <!-- UI COMPONENTS -->
       <li>
-        <a routerLink="/ui-components"
-           routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+        <a
+          routerLink="/ui-components"
+          routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+        >
           UI Components
+        </a>
+      </li>
+
+      <!-- SIMPSONS MOBILE -->
+      <li>
+        <a
+          routerLink="/simpsons"
+          routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+        >
+          Simpsons
         </a>
       </li>
 
       <!-- FORMULARIOS MOBILE -->
       <li>
+
         <details>
-          <summary>Formularios</summary>
+
+          <summary>
+            Formularios
+          </summary>
 
           <ul class="p-2">
 
             <li>
-              <a routerLink="/signup"
-                 routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+              <a
+                routerLink="/signup"
+                routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+              >
                 Signup
               </a>
             </li>
 
             <li>
-              <a routerLink="/profile"
-                 routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+              <a
+                routerLink="/profile"
+                routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+              >
                 Perfil
               </a>
             </li>
 
             <li>
-              <a routerLink="/projects"
-                 routerLinkActive="bg-black text-white rounded-md px-2 py-1">
+              <a
+                routerLink="/projects"
+                routerLinkActive="bg-black text-white rounded-md px-2 py-1"
+              >
                 Proyecto
               </a>
             </li>
 
           </ul>
+
         </details>
+
       </li>
 
     </ul>
+
   </div>
+
 </header>

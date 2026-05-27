@@ -1,0 +1,141 @@
+<section class="bg-base-200 min-h-screen py-10 px-8">
+
+  <div class="max-w-5xl mx-auto">
+
+    <div class="mb-8">
+      <h1 class="text-4xl font-extrabold tracking-tight mb-2">
+        The Simpsons
+      </h1>
+
+      <p class="text-base-content/60 text-lg">
+        Personajes de la serie — powered by The Simpsons API
+      </p>
+    </div>
+
+    @if (simpsonsResource.isLoading()) {
+      <div class="flex justify-center items-center h-64">
+        <span class="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    }
+
+    @if (simpsonsResource.error()) {
+      <div class="alert alert-error max-w-lg mx-auto mt-8">
+        <span>Error al cargar los personajes. Intenta de nuevo.</span>
+      </div>
+    }
+
+    @if (simpsonsResource.value()) {
+
+      @let data = simpsonsResource.value();
+
+      <div class="flex items-center justify-between gap-4 mb-6">
+
+        <span class="text-sm text-base-content/60">
+          Página {{ (currentPage$ | async) ?? 1 }}
+          de {{ data!.pages }}
+          — {{ data!.count }} personajes en total
+        </span>
+
+        <div class="join">
+
+          <a
+            class="join-item btn btn-sm"
+            [class.btn-disabled]="((currentPage$ | async) ?? 1) <= 1"
+            [routerLink]="[]"
+            [queryParams]="{ page: ((currentPage$ | async) ?? 1) - 1 }"
+          >
+            «
+          </a>
+
+          <button class="join-item btn btn-sm btn-active">
+            {{ (currentPage$ | async) ?? 1 }}
+          </button>
+
+          <a
+            class="join-item btn btn-sm"
+            [class.btn-disabled]="((currentPage$ | async) ?? 1) >= data!.pages"
+            [routerLink]="[]"
+            [queryParams]="{ page: ((currentPage$ | async) ?? 1) + 1 }"
+          >
+            »
+          </a>
+
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-box border border-base-300 bg-base-100 shadow-sm">
+
+        <table class="table w-full">
+
+          <thead class="bg-base-200 text-base-content">
+            <tr>
+              <th class="w-16">#</th>
+              <th>Personaje</th>
+              <th>Ocupación</th>
+              <th class="text-center">Estado</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            @for (char of data!.results; track char.id) {
+
+              <tr class="hover:bg-base-200/60 transition-colors">
+
+                <td class="font-mono text-sm text-base-content/60">
+                  {{ char.id }}
+                </td>
+
+                <td>
+                  <div class="flex items-center gap-4 py-2">
+
+                    <a [routerLink]="['/simpsons', char.id]" class="avatar">
+                      <div class="w-14 h-14 rounded-xl bg-base-200 ring ring-base-300 ring-offset-base-100 ring-offset-2">
+                        <img [src]="getImageUrl(char.portrait_path)" [alt]="char.name" class="object-cover" />
+                      </div>
+                    </a>
+
+                    <div class="min-w-0">
+                      <a [routerLink]="['/simpsons', char.id]" class="font-bold text-base link link-hover block">
+                        {{ char.name }}
+                      </a>
+
+                      <div class="text-xs text-base-content/60">
+                        Personaje de Los Simpson
+                      </div>
+                    </div>
+
+                  </div>
+                </td>
+
+                <td>
+                  <span class="text-sm text-base-content/80">
+                    {{ char.occupation || 'Sin ocupación registrada' }}
+                  </span>
+                </td>
+
+                <td class="text-center">
+                  <span
+                    class="badge badge-sm font-medium"
+                    [class.badge-success]="char.status === 'Alive'"
+                    [class.badge-error]="char.status === 'Dead'"
+                    [class.badge-warning]="char.status !== 'Alive' && char.status !== 'Dead'"
+                  >
+                    {{ char.status || 'Desconocido' }}
+                  </span>
+                </td>
+
+              </tr>
+
+            }
+
+          </tbody>
+        </table>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>
