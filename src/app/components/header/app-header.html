@@ -9,7 +9,6 @@
 
   <div class="collapse-title navbar px-4">
 
-    <!-- START -->
     <div class="navbar-start">
 
       <label for="navbar-toggle" class="btn btn-ghost lg:hidden">
@@ -22,7 +21,6 @@
 
     </div>
 
-    <!-- DESKTOP -->
     <div class="navbar-center hidden lg:flex">
 
       <ul class="menu menu-horizontal px-1">
@@ -64,7 +62,6 @@
           </a>
         </li>
 
-        <!-- SIMPSONS -->
         <li>
           <a
             routerLink="/simpsons"
@@ -74,7 +71,6 @@
           </a>
         </li>
 
-        <!-- FORMULARIOS -->
         <li>
 
           <details>
@@ -122,11 +118,24 @@
 
     </div>
 
-    <div class="navbar-end"></div>
+    <div class="navbar-end gap-2">
+      @if (currentUser()) {
+        <span class="hidden text-sm text-base-content/60 lg:block">
+          {{ currentUser()!.email }}
+        </span>
+    
+        <button class="btn btn-ghost btn-sm" (click)="logout()">
+          Cerrar sesion
+        </button>
+      } @else {
+        <a class="btn btn-primary btn-sm" routerLink="/auth-page">
+          Iniciar sesion
+        </a>
+      }
+    </div>
 
   </div>
 
-  <!-- MOBILE -->
   <div class="collapse-content lg:hidden z-10">
 
     <ul class="menu rounded-box bg-base-200">
@@ -168,7 +177,6 @@
         </a>
       </li>
 
-      <!-- SIMPSONS MOBILE -->
       <li>
         <a
           routerLink="/simpsons"
@@ -178,7 +186,6 @@
         </a>
       </li>
 
-      <!-- FORMULARIOS MOBILE -->
       <li>
 
         <details>
