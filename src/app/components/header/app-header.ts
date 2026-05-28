@@ -24,7 +24,8 @@ export class AppHeader {
 
   logout() {
     // 🛠️ Cambiado .subscribe() por .then() porque Firebase maneja Promesas
-    this.authService.logout()
+    this.authService
+      .logout()
       .then(() => {
         // Redirige al login después de cerrar sesión de forma exitosa.
         this.router.navigate(['/auth-page']); // O la ruta exacta que le vayas a poner a tu Login
@@ -59,5 +60,18 @@ export class AppHeader {
       return;
     }
     console.log(this.myForm.value);
+  }
+
+  // En tu app-header.ts
+
+  goToLogin() {
+    console.log('Intentando navegar a /auth-page...'); // 👈 Para ver si el click al menos llega aquí
+    this.router.navigate(['/auth-page']).then((success) => {
+      if (success) {
+        console.log('Navegación exitosa');
+      } else {
+        console.error('La navegación falló');
+      }
+    });
   }
 }

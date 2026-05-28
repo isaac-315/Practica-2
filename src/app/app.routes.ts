@@ -39,7 +39,7 @@ export const routes: Routes = [
 
   { path: 'ui-components', component: UiComponents },
 
-  { path: 'auth', component: AuthPageComponent },
+  { path: 'auth-page', component: AuthPageComponent },
 
   { path: '**', redirectTo: '' },
 ];
